@@ -1,6 +1,6 @@
-import logo from '../../../accets/logoELearning.png'
-import avatarInput from '../../../accets/UserInputAvatar.png'
-import passwordInput from '../../../accets/passwordInput.png'
+import logo from '../../assets/logoELearning.png'
+import avatarInput from '../../assets/UserInputAvatar.png'
+import passwordInput from '../../assets/passwordInput.png'
 
 export function Login () {
   return (
