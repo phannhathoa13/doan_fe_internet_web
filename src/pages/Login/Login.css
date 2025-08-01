@@ -15,8 +15,8 @@
 
 .content-left-container {
   background-color: white;
-  height: 710px;
-  width: 650px;
+  height: 600px;
+  width: 550px;
   border-radius: 10px;
 
   .logo-ELearning {
@@ -52,16 +52,16 @@
         width: 100%;
         padding: 10px 10px 10px 50px;
         box-sizing: border-box;
-        font-size: 24px;
+        font-size: 16px;
         border-radius: 40px;
-        height: 50px;
+        height: 40px;
       }
       .image-logo {
         position: absolute;
-        top: 6px;
-        left: 10px;
-        width: 36px;
-        height: 36px;
+        top: 5px;
+        left: 14px;
+        width: 30px;
+        height: 30px;
       }
     }
   }
@@ -70,17 +70,42 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 60px;
+    margin: 60px 156px;
+    height: 40px;
+    background-color: #c75959;
+    border-radius: 30px;
+    cursor: pointer;
+
+    p {
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+    }
   }
 }
 .content-right-container {
   background-color: #c75959;
-  height: 710px;
-  width: 650px;
+  height: 600px;
+  width: 550px;
   border-radius: 10px;
+  display: flex;
+  flex-direction: column;
 
-  .logo-Content {
-    width: 300px;
-    height: 200px;
+  .image-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 44px;
+
+    .image {
+      width: 100%;
+      height: 400px;
+    }
+  }
+
+  .image-content {
+    font-size: 16px;
+    color: white;
+    padding: 58px 60px 0 60px;
+    text-align: center;
   }
 }
