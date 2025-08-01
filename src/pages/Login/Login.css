@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+.login-container {
+  background-color: #af8383;
+  font-family: "Poppins", sans-serif;
+}
+.background-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.content-left-container {
+  background-color: white;
+  height: 710px;
+  width: 650px;
+  border-radius: 10px;
+
+  .logo-ELearning {
+    width: 80px;
+    height: 80px;
+    padding: 25px 25px;
+  }
+
+  .form-heading {
+    text-align: center;
+    font-size: 40px;
+    font-weight: lighter;
+  }
+
+  .form-nav {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    margin-top: 20px;
+    color: #c75959;
+  }
+
+  .input-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 32px;
+
+    .form-container {
+      position: relative;
+      width: 400px;
+      .type-input {
+        width: 100%;
+        padding: 10px 10px 10px 50px;
+        box-sizing: border-box;
+        font-size: 24px;
+        border-radius: 40px;
+        height: 50px;
+      }
+      .image-logo {
+        position: absolute;
+        top: 6px;
+        left: 10px;
+        width: 36px;
+        height: 36px;
+      }
+    }
+  }
+
+  .button-signIn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 60px;
+  }
+}
+.content-right-container {
+  background-color: #c75959;
+  height: 710px;
+  width: 650px;
+  border-radius: 10px;
+
+  .logo-Content {
+    width: 300px;
+    height: 200px;
+  }
+}

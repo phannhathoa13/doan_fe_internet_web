@@ -1,30 +1,61 @@
-import logo from '../../assets/logoELearning.png'
-import avatarInput from '../../assets/UserInputAvatar.png'
-import passwordInput from '../../assets/passwordInput.png'
+import "./Login.css";
+import logo from "../../assets/logoELearning.png";
+import avatarInput from "../../assets/UserInputAvatar.png";
+import passwordInput from "../../assets/passwordInput.png";
+import logoContentRightSide from "../../assets/logoContentRightSide.png";
 
-export function Login () {
+export function Login() {
   return (
-    <div className='background-container'>
-      <div className='content-left-container'>
-        <h1 className='form-heading'>WELCOME TO</h1>
-        <h2 className='form-nav'>E-Learning</h2>
-        <div className='input-container'>
-          <img src={logo} alt='logo-ELearning'></img>
-          <form typeof='text'>Username</form>
+    <div className="login-container">
+      <div className="background-container">
+        <div className="content-left-container">
+          <img className="logo-ELearning" src={logo} alt="logo-ELearning"></img>
+          <h1 className="form-heading">WELCOME TO</h1>
+          <h2 className="form-nav">E-Learning</h2>
+          <div className="input-container">
+            <div className="form-container">
+              <img
+                className="image-logo"
+                src={avatarInput}
+                alt="avatar logo"
+              ></img>
+              <input
+                className="type-input"
+                type="text"
+                placeholder="Username"
+              />
+            </div>
+          </div>
+          <div className="input-container">
+            <div className="form-container">
+              <img
+                className="image-logo"
+                src={passwordInput}
+                alt="password password"
+              ></img>
+              <input
+                className="type-input"
+                type="password"
+                placeholder="Password"
+              />
+            </div>
+          </div>
+          <div className="button-signIn">
+            <p>SIGN IN</p>
+          </div>
         </div>
-        <div className='input-container'>
-          <img src={avatarInput} alt='lavatar-input'></img>
-          <form typeof='password'>Password</form>
+        <div className="content-right-container">
+          <img
+            className="logo-Content"
+            src={logoContentRightSide}
+            alt="logo study"
+          ></img>
+          <p>
+            “Education is the passport to the future, for tomorrow belongs those
+            who prepare for it today.”
+          </p>
         </div>
-        <button className='button-signIn'>SIGN IN</button>
-      </div>
-      <div className='content-right-container'>
-        <img src={passwordInput} alt='password-input'></img>
-        <p>
-          “Education is the passport to the future, for tomorrow belongs those
-          who prepare for it today.”
-        </p>
       </div>
     </div>
-  )
+  );
 }
