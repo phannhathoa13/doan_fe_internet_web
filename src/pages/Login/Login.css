@@ -83,6 +83,19 @@
     }
   }
 }
+
+.button-signIn.disabled {
+  pointer-events: none;
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.error-message {
+  color: red;
+  font-size: 14px;
+  margin-top: 4px;
+}
+
 .content-right-container {
   background-color: #c75959;
   height: 600px;

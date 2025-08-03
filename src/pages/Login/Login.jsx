@@ -6,8 +6,16 @@ import logoContentRightSide from "../../assets/logoContentRightSide.png";
 import { useLogin } from "./useLogin";
 
 export function Login() {
-  const { username, password, handleLogin, setUsername, setPassword } =
-    useLogin();
+  const {
+    username,
+    password,
+    setUsername,
+    setPassword,
+    errorUsername,
+    errorPassword,
+    handleLogin,
+    isFormValid,
+  } = useLogin();
   return (
     <div className="login-container">
       <div className="background-container">
@@ -31,6 +39,8 @@ export function Login() {
               />
             </div>
           </div>
+          {errorUsername && <p className="error-message">{errorUsername}</p>}
+
           <div className="input-container">
             <div className="form-container">
               <img
@@ -47,7 +57,11 @@ export function Login() {
               />
             </div>
           </div>
-          <div className="button-signIn" onClick={handleLogin}>
+          {errorPassword && <p className="error-message">{errorPassword}</p>}
+          <div
+            className={`button-signIn ${!isFormValid ? "disabled" : ""}`}
+            onClick={isFormValid ? handleLogin : null}
+          >
             <p>SIGN IN</p>
           </div>
         </div>
