@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const listUserAccount = [
     {
+        id: 1,
         username: "nguyenvana",
         password: "123456",
         classCode: "CTK42A",
@@ -21,6 +23,7 @@ const listUserAccount = [
         ]
     },
     {
+        id: 2,
         username: "lethib",
         password: "abcdef",
         classCode: "CTK42B",
@@ -40,6 +43,7 @@ const listUserAccount = [
         ]
     },
     {
+        id: 3,
         username: "tranvanc",
         password: "qwerty",
         classCode: "CTK42C",
@@ -64,6 +68,8 @@ export function useLogin() {
     const [errorMassage, setErrorMassage] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
 
+    const navigate = useNavigate();
+
     useEffect(() => {
         setIsFormValid(username.trim() !== '' && password.trim() !== '');
     }, [username, password]);
@@ -75,6 +81,7 @@ export function useLogin() {
         }
         else {
             setErrorMassage('');
+            navigate(`/courses`)
         }
     };
 
