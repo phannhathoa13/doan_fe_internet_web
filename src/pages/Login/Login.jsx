@@ -1,4 +1,4 @@
-import "./Login.css";
+import styles from "./Login.module.css";
 import logo from "../../assets/logoELearning.png";
 import avatarInput from "../../assets/UserInputAvatar.png";
 import passwordInput from "../../assets/passwordInput.png";
@@ -16,21 +16,25 @@ export function Login() {
     errorMassage,
   } = useLogin();
   return (
-    <div className="login-container">
-      <div className="background-container">
-        <div className="content-left-container">
-          <img className="logo-ELearning" src={logo} alt="logo-ELearning"></img>
-          <h1 className="form-heading">WELCOME TO</h1>
-          <h2 className="form-nav">E-Learning</h2>
-          <div className="input-container">
-            <div className="form-container">
+    <div className={styles.loginContainer}>
+      <div className={styles.backgroundContainer}>
+        <div className={styles.contentLeftContainer}>
+          <img
+            className={styles.logoELearning}
+            src={logo}
+            alt="logo-ELearning"
+          />
+          <h1 className={styles.formHeading}>WELCOME TO</h1>
+          <h2 className={styles.formNav}>E-Learning</h2>
+          <div className={styles.inputContainer}>
+            <div className={styles.formContainer}>
               <img
-                className="image-logo"
+                className={styles.imageLogo}
                 src={avatarInput}
                 alt="avatar logo"
-              ></img>
+              />
               <input
-                className="type-input"
+                className={styles.typeInput}
                 type="text"
                 placeholder="Username"
                 value={username}
@@ -38,15 +42,15 @@ export function Login() {
               />
             </div>
           </div>
-          <div className="input-container">
-            <div className="form-container">
+          <div className={styles.inputContainer}>
+            <div className={styles.formContainer}>
               <img
-                className="image-logo"
+                className={styles.imageLogo}
                 src={passwordInput}
                 alt="password password"
-              ></img>
+              />
               <input
-                className="type-input"
+                className={styles.typeInput}
                 type="password"
                 placeholder="Password"
                 value={password}
@@ -54,23 +58,27 @@ export function Login() {
               />
             </div>
           </div>
-          {errorMassage && <p className="error-message">{errorMassage}</p>}
+          {errorMassage && (
+            <p className={styles.errorMessage}>{errorMassage}</p>
+          )}
           <div
-            className={`button-signIn ${!isFormValid ? "disabled" : ""}`}
+            className={`${styles.buttonSignIn} ${
+              !isFormValid ? styles.buttonSignInDisabled : ""
+            }`}
             onClick={isFormValid ? handleLogin : null}
           >
             <p>SIGN IN</p>
           </div>
         </div>
-        <div className="content-right-container">
-          <div className="image-container">
+        <div className={styles.contentRightContainer}>
+          <div className={styles.imageContainer}>
             <img
-              className="image"
+              className={styles.image}
               src={logoContentRightSide}
               alt="logo study"
-            ></img>
+            />
           </div>
-          <div className="image-content">
+          <div className={styles.imageContent}>
             <p>
               “ Education is the passport to the future, for tomorrow belongs
               those who prepare for it today. ”
