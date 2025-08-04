@@ -11,10 +11,9 @@ export function Login() {
     password,
     setUsername,
     setPassword,
-    errorUsername,
-    errorPassword,
     handleLogin,
     isFormValid,
+    errorMassage,
   } = useLogin();
   return (
     <div className="login-container">
@@ -39,8 +38,6 @@ export function Login() {
               />
             </div>
           </div>
-          {errorUsername && <p className="error-message">{errorUsername}</p>}
-
           <div className="input-container">
             <div className="form-container">
               <img
@@ -57,7 +54,7 @@ export function Login() {
               />
             </div>
           </div>
-          {errorPassword && <p className="error-message">{errorPassword}</p>}
+          {errorMassage && <p className="error-message">{errorMassage}</p>}
           <div
             className={`button-signIn ${!isFormValid ? "disabled" : ""}`}
             onClick={isFormValid ? handleLogin : null}

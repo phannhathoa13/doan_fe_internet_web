@@ -54,45 +54,33 @@ const listUserAccount = [
     }
 ];
 
-
-function isFormEmptyField(username, password) {
-    let isValid = true;
-
-    if (!username) {
-        isValid = false;
-    }
-    if (!password) {
-        isValid = false;
-    }
-
-    return isValid;
-
+function isValidAccount(username, password) {
+    return listUserAccount.some(user => (user.username === username) && (user.password === password));
 }
 
 export function useLogin() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [errorUsername, setErrorUsername] = useState('');
-    const [errorPassword, setErrorPassword] = useState('');
+    const [errorMassage, setErrorMassage] = useState('');
     const [isFormValid, setIsFormValid] = useState(false);
 
     useEffect(() => {
         setIsFormValid(username.trim() !== '' && password.trim() !== '');
-        console.log(errorUsername, errorPassword);
-
     }, [username, password]);
 
     const handleLogin = () => {
-        const isValid = isFormEmptyField(username, password);
-        if (isValid) {
-            console.log("Login success");
+        if (!(isValidAccount(username, password))) {
+            setErrorMassage('Your username or password is incorrect.');
+            return;
+        }
+        else {
+            setErrorMassage('');
         }
     };
 
     return {
         username, password,
         setUsername, setPassword,
-        errorUsername, errorPassword,
-        handleLogin, isFormValid
+        handleLogin, isFormValid, errorMassage
     };
 }
